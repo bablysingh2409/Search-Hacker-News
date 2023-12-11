@@ -1,10 +1,24 @@
 import axios from "axios";
 
-const searchPost=async(query)=>{
+export const searchPost=async(query)=>{
+    try{
     const res=await axios.get("http://hn.algolia.com/api/v1/search?query=test");
-    // console.log(res.data)
     return res.data;
+    }
+    catch(err){
+        console.log(err)
+    }
                   
 }
 
-export default searchPost;
+export const getPostDetails=async(objID)=>{
+    try{
+      const res=await axios.get(`http://hn.algolia.com/api/v1/items/${objID}`)
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
+
+

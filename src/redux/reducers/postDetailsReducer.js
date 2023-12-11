@@ -1,12 +1,12 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
-import {searchPost} from "../../services/api";
+import {getPostDetails} from "../../services/api";
 
 
 // Async thunk for fetching search results
-export const fetchSearchResult=createAsyncThunk( "http://hn.algolia.com/api/v1/search?query=test",async(query)=>{
+export const fetchPostDetails=createAsyncThunk( "fetchPostDetails",async(objId)=>{
      try{
-       const res=await searchPost(query);
-       return res.hits;
+       const response=await getPostDetails(objId);
+       return response;
      }
      catch(err){
         console.log(err)
@@ -15,7 +15,7 @@ export const fetchSearchResult=createAsyncThunk( "http://hn.algolia.com/api/v1/s
 
 
 // Create a slice for search results
-const searchResultSlice=createSlice({
+const postDetailsSlice=createSlice({
 name:'searchResuls',
 initialState:{
     result:[],
@@ -41,5 +41,5 @@ extraReducers:(builder)=>{
 })
 
 
-export const searchResultReducer=searchResultSlice.reducer;
-export const searchResultSelector=(state)=>state.searchResultReducer;
+export const postDetailsReducer=postDetailsSlice.reducer;
+export const postDetailSelector=(state)=>state.postDetailsReducer;
