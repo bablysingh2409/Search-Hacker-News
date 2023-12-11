@@ -16,7 +16,7 @@ export const fetchPostDetails=createAsyncThunk( "fetchPostDetails",async(objId)=
 
 // Create a slice for search results
 const postDetailsSlice=createSlice({
-name:'searchResuls',
+name:'postDetails',
 initialState:{
     result:[],
     loading:false,
@@ -25,15 +25,15 @@ initialState:{
 reducers:{},
 extraReducers:(builder)=>{
     builder
-    .addCase(fetchSearchResult.pending,(state)=>{
+    .addCase(fetchPostDetails.pending,(state)=>{
         state.loading=true;
         state.error=null;
     })
-    .addCase(fetchSearchResult.fulfilled,(state,action)=>{
+    .addCase(fetchPostDetails.fulfilled,(state,action)=>{
         state.loading=false;
         state.result=action.payload;
     })
-    .addCase(fetchSearchResult.rejected,(state,action)=>{
+    .addCase(fetchPostDetails.rejected,(state,action)=>{
         state.loading=false;
         state.error=action.error.message
     })

@@ -1,16 +1,27 @@
-
 import { Provider } from 'react-redux';
 import './App.css';
-// import SearchBar from './components/Searchbar/SearchBar';
 import Home from './pages/Home/Home';
-import { store } from './redux/store';
+import PostDetailsPage from './pages/PostDetailsPage/PostDetailsPage';
+
+import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+
 
 function App() { 
 
+  const router=createBrowserRouter([
+    {
+      path:"/",
+      element:<Home/>
+    },
+    {
+      path:"/post/:objId",
+      element:<PostDetailsPage/>
+    }
+
+  ])
+
   return (
-   <Provider store={store}>
-     <Home/>
-    </Provider>
+  <RouterProvider router={router}></RouterProvider>
   );
 }
 

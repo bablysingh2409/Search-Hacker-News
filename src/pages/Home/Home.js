@@ -14,6 +14,9 @@ function Home() {
    const handleSearch=async(query)=>{
         dispatch(fetchSearchResult(query))
    }
+   const handlePostClick=(objId)=>{
+       console.log(objId)
+   }
 
 
   return (
@@ -21,7 +24,7 @@ function Home() {
         <SearchBar  onSearch={handleSearch}/>
         {loading && <p>loading.....</p>}
         {error && <p>errorrrr...</p>}
-        <SearchResultList  result={result}/>
+        <SearchResultList  result={result}  onPostClick={handlePostClick}/>
     </div>
   )
 }
