@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import style from "./SearchBar.module.css"
 
 function SearchBar() {
     const [query,setQuery]=useState('')
   return (
-    <div>
-        <input type='text' placeholder='Search Hacker news....' onChange={()=>setQuery(e.target.value)}/>
-        <button>Search</button>
+    <div className={style.SearchBar_container} >
+        <input type='text' placeholder='Search Hacker news....' onChange={(e)=>setQuery(e.target.value)}/>
+        <button type='submit'>Search</button>
     </div>
   )
 }
