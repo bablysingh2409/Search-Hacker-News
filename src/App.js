@@ -1,6 +1,7 @@
 
 import './App.css';
-import searchPost from './services/api';
+// import SearchBar from './components/Searchbar/SearchBar';
+import Home from './pages/Home/Home';
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-     
+     <Home/>
     </div>
   );
 }
