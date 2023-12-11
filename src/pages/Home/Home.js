@@ -1,19 +1,26 @@
-import React, { useState } from 'react'
-import searchPost from '../../services/api'
+import React, { useState } from 'react';
 import SearchBar from '../../components/Searchbar/SearchBar';
+import { fetchSearchResult } from '../../redux/reducers/searchResultReducer';
 import SearchResultList from '../../components/SearchResultList/SearchResultList';
+import { useDispatch ,useSelector} from 'react-redux';
+import { searchResultSelector } from '../../redux/reducers/searchResultReducer';
 
 
 function Home() {
-     const [result,setResult]=useState([]);
+    const dispatch=useDispatch();
+    const {result,loading,error}=useSelector(searchResultSelector)
+   
+   
    const handleSearch=async(query)=>{
-        const ans= await searchPost(query);
-        setResult([...ans.hits]);
+        dispatch(fetchSearchResult(query))
    }
+
 
   return (
     <div>
         <SearchBar  onSearch={handleSearch}/>
+        {loading && <p>loading.....</p>}
+        {error && <p>errorrrr...</p>}
         <SearchResultList  result={result}/>
     </div>
   )
