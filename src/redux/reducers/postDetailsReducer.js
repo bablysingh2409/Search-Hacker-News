@@ -6,6 +6,7 @@ import {getPostDetails} from "../../services/api";
 export const fetchPostDetails=createAsyncThunk( "fetchPostDetails",async(objId)=>{
      try{
        const response=await getPostDetails(objId);
+    //    console.log('rrrrrr',response)
        return response;
      }
      catch(err){

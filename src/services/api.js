@@ -13,7 +13,8 @@ export const searchPost=async(query)=>{
 
 export const getPostDetails=async(objID)=>{
     try{
-      const res=await axios.get(`http://hn.algolia.com/api/v1/items/${objID}`)
+      const res=await axios.get(`http://hn.algolia.com/api/v1/items/${objID}`);
+      return res.data;
     }
     catch(err){
         console.log(err)
