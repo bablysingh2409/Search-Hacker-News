@@ -4,7 +4,6 @@ import { postDetailSelector } from '../../redux/reducers/postDetailsReducer'
 import PostDetails from '../../components/PostDetails/PostDetails';
 import { useParams } from 'react-router-dom';
 import { fetchPostDetails } from '../../redux/reducers/postDetailsReducer';
-import style from "./PostDetails.module.css";
 
 function PostDetailsPage() {
     const {result,loading,error}=useSelector(postDetailSelector);
@@ -23,7 +22,7 @@ function PostDetailsPage() {
   return (
     <div style={{backgroundColor:"#C7DCA7"}}>
         
-        {error && <p>Error...</p>}
+        {error && <p>{error}</p>}
        {!loading  && <PostDetails  post={result}/>}
     </div>
   )

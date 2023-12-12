@@ -6,7 +6,7 @@ export const searchPost=async(query)=>{
     return res.data;
     }
     catch(err){
-        console.log(err)
+        throw Error("Error while searching for post")
     }
                   
 }
@@ -17,7 +17,7 @@ export const getPostDetails=async(objID)=>{
       return res.data;
     }
     catch(err){
-        console.log(err)
+        throw Error("Error while fetching post details")
     }
 }
 

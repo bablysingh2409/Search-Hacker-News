@@ -3,13 +3,14 @@ import {searchPost} from "../../services/api";
 
 
 // Async thunk for fetching search results
-export const fetchSearchResult=createAsyncThunk( "http://hn.algolia.com/api/v1/search?query=test",async(query)=>{
+export const fetchSearchResult=createAsyncThunk( "searchResult",async(query)=>{
      try{
        const res=await searchPost(query);
        return res.hits;
      }
      catch(err){
-        console.log(err)
+        // console.log('errrrr',err.message);
+        return {error:err.message};
      }
 }   )
 
@@ -35,7 +36,7 @@ extraReducers:(builder)=>{
     })
     .addCase(fetchSearchResult.rejected,(state,action)=>{
         state.loading=false;
-        state.error=action.error.message
+        state.error=action.payload.error
     })
 }
 })

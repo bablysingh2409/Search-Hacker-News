@@ -10,7 +10,7 @@ export const fetchPostDetails=createAsyncThunk( "fetchPostDetails",async(objId)=
        return response;
      }
      catch(err){
-        console.log(err)
+        return {error:err.message};
      }
 }   )
 
@@ -36,7 +36,7 @@ extraReducers:(builder)=>{
     })
     .addCase(fetchPostDetails.rejected,(state,action)=>{
         state.loading=false;
-        state.error=action.error.message
+        state.error=action.payload.error
     })
 }
 })
