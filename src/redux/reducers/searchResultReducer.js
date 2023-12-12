@@ -17,7 +17,7 @@ export const fetchSearchResult=createAsyncThunk( "searchResult",async(query)=>{
 
 // Create a slice for search results
 const searchResultSlice=createSlice({
-name:'searchResuls',
+name:'searchResults',
 initialState:{
     result:[],
     loading:false,

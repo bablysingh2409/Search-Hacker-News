@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const searchPost=async(query)=>{
     try{
-    const res=await axios.get("http://hn.algolia.com/api/v1/search?query=test");
+    const res=await axios.get("https://hn.algolia.com/api/v1/search?query=test");
     return res.data;
     }
     catch(err){
@@ -13,7 +13,7 @@ export const searchPost=async(query)=>{
 
 export const getPostDetails=async(objID)=>{
     try{
-      const res=await axios.get(`http://hn.algolia.com/api/v1/items/${objID}`);
+      const res=await axios.get(`https://hn.algolia.com/api/v1/items/${objID}`);
       return res.data;
     }
     catch(err){

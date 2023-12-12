@@ -22,8 +22,8 @@ function PostDetailsPage() {
   return (
     <div style={{backgroundColor:"#C7DCA7"}}>
         
-        {error && <p>{error}</p>}
        {!loading  && <PostDetails  post={result}/>}
+       {error && <p>{error}</p>}
     </div>
   )
 }

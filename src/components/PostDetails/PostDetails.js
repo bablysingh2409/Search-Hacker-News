@@ -16,7 +16,7 @@ function PostDetails({ post }) {
             </div>
             <div className={style.post_comments_container}>
                 <h2>All Comments</h2>
-                {post.children &&
+                {Array.isArray(post.children) &&
                     post.children.map((comments, i) => {
                         return <div className={style.comments} key={i}>
                             <h4>{comments.author}</h4>

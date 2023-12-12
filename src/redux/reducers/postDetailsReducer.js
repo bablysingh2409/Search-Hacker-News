@@ -3,7 +3,7 @@ import {getPostDetails} from "../../services/api";
 
 
 // Async thunk for fetching search results
-export const fetchPostDetails=createAsyncThunk( "fetchPostDetails",async(objId)=>{
+export const fetchPostDetails=createAsyncThunk( "postDetails",async(objId)=>{
      try{
        const response=await getPostDetails(objId);
     //    console.log('rrrrrr',response)
