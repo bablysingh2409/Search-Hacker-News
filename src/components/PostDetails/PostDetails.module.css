@@ -80,3 +80,16 @@
     color: #860A35;
     padding: 10px;
 }
+
+.back_to_home{
+    width: 200px;
+    padding:5px;
+    color: #860A35;
+    border:2px solid #860A35;
+    font-size: 1.3rem;
+}
+
+.back_to_home:hover{
+    border: 2px solid #0C356A;
+    color: #0C356A;
+}

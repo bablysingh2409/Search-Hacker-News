@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './PostDetails.module.css'
+import { Link } from 'react-router-dom'
 
 function PostDetails({ post }) {
     // console.log('post...', post)
@@ -7,6 +8,7 @@ function PostDetails({ post }) {
 
     return (
         <div className={style.postDetails_container} >
+            <Link to='/' className={style.back_to_home}>Back to home page</Link>
             <h1 className={style.postDetails_heading}>Post</h1>
             <div className={style.post_container}>
                 <h1>{post.title}</h1>
