@@ -1,0 +1,82 @@
+.postDetails_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.postDetails_heading{
+    font-size: 4.2rem;
+    margin: auto;
+    color: #2B2A4C;
+}
+
+.post_container{
+    width: 30%;
+    margin: 10px auto;
+    height: 30vh;
+    background-color: #C5FFF8;
+    padding: 40px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.post_container h1{
+    color: hsl(323, 66%, 17%);
+    font-weight: 700;
+    font-size: 2.2rem;
+
+}
+
+.post_container p{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color:#CE5A67 ;
+}
+
+.post_container p span{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #711DB0;
+}
+.post_comments_container{
+    margin: 50px auto;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.post_comments_container h2{
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #AF2655;
+    border-bottom: 2px solid #0C356A;
+
+}
+
+.comments{
+    width: 80%;
+    height:auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF90C2;
+    flex-wrap: wrap;
+    margin: 10px;
+    box-shadow: rgba(255, 144, 194,0.2) 0px 7px 29px 0px;
+    border-radius: 2rem;
+}
+
+.comments h4{
+    color: #2B2A4C;
+    font-size: 1.7rem;
+    padding: 10px;
+}
+
+.comments p{
+    color: #860A35;
+    padding: 10px;
+}

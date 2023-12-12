@@ -18,7 +18,7 @@ function Home() {
    
 
   return (
-    <div>
+    <div style={{width:"90%"}}>
         <SearchBar  onSearch={handleSearch}/>
         {loading && <p>loading.....</p>}
         {error && <p>errorrrr...</p>}

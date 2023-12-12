@@ -16,10 +16,12 @@ function PostDetailsPage() {
 
    
   return (
-    <div>
+    <div style={{backgroundImage: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)"
+      
+      }}>
         {loading && <p>Loading....</p>} 
         {error && <p>Error...</p>}
-        <PostDetails  post={result}/>
+       {!loading  && <PostDetails  post={result}/>}
     </div>
   )
 }
